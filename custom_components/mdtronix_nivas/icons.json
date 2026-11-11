@@ -1,0 +1,36 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "pump": { "default": "mdi:pump-off", "state": { "on": "mdi:pump" } },
+      "auto_paused": { "default": "mdi:pause-circle-outline" },
+      "quiet_hours": { "default": "mdi:weather-night" }
+    },
+    "button": {
+      "clear_dry_run": { "default": "mdi:water-check" }
+    },
+    "number": {
+      "start_level": { "default": "mdi:arrow-collapse-up" },
+      "stop_level": { "default": "mdi:arrow-collapse-down" },
+      "max_run_time": { "default": "mdi:timer-alert-outline" },
+      "dry_run_interval": { "default": "mdi:timer-refresh-outline" }
+    },
+    "sensor": {
+      "level": { "default": "mdi:waves-arrow-up" },
+      "water": { "default": "mdi:water" },
+      "pump_run_time": { "default": "mdi:timer-play-outline" },
+      "pump_time_today": { "default": "mdi:timer-outline" },
+      "pump_time_total": { "default": "mdi:timer-sand" },
+      "tank_used_today": { "default": "mdi:water-minus" },
+      "last_pump_event": { "default": "mdi:history" },
+      "last_pump_event_time": { "default": "mdi:clock-outline" },
+      "distance": { "default": "mdi:arrow-expand-vertical" },
+      "status": { "default": "mdi:information-outline" }
+    },
+    "switch": {
+      "pump": { "default": "mdi:pump-off", "state": { "on": "mdi:pump" } },
+      "auto": { "default": "mdi:hand-back-right", "state": { "on": "mdi:refresh-auto" } },
+      "dry_run_protection": { "default": "mdi:shield-off-outline", "state": { "on": "mdi:shield-check" } },
+      "quiet_hours_mode": { "default": "mdi:weather-night" }
+    }
+  }
+}

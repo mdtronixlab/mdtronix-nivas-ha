@@ -1,0 +1,116 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Add an MDtronix unit",
+        "description": "Enter the unit's IP address. It must be set up in the MDtronix app as MDtronix Smart Nivas and on the same Wi-Fi as Home Assistant.",
+        "data": {
+          "host": "IP address or host name"
+        }
+      },
+      "confirm": {
+        "title": "Add {name}?",
+        "description": "Found {name} at {host}."
+      },
+      "key": {
+        "title": "Enter the key for {name}",
+        "description": "Home Assistant can only collect the key by itself in the 10 minutes after the unit joins Wi-Fi from a setup. Open the unit in the MDtronix app, tap Smart Nivas key, and type it in here.",
+        "data": {
+          "key": "Smart Nivas key"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The unit didn't answer. Check it is on and on the same network as Home Assistant.",
+      "invalid_key": "The unit refused this key. Check it against the MDtronix app.",
+      "invalid_key_format": "A key is 32 letters and digits (0-9, a-f)."
+    },
+    "abort": {
+      "already_configured": "This unit is already added.",
+      "cannot_connect": "The unit didn't answer. Check it is on and on the same network as Home Assistant.",
+      "not_nivas": "This unit isn't in Smart Nivas mode. Set it up again in the MDtronix app and choose MDtronix Smart Nivas.",
+      "not_supported": "This MDtronix device isn't supported yet.",
+      "reauth_successful": "The unit is paired again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tank",
+        "description": "The unit measures the level, not the volume. Enter the tank's size to see water in litres, including for the Energy dashboard. 0 means not set.",
+        "data": {
+          "tank_litres": "Tank size (litres)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "pump": { "name": "Pump" },
+      "sensor_error": { "name": "Level sensor fault" },
+      "dry_run": { "name": "Dry run" },
+      "auto_paused": { "name": "Auto paused" },
+      "quiet_hours": { "name": "Quiet hours" }
+    },
+    "button": {
+      "clear_dry_run": { "name": "Clear dry run" }
+    },
+    "number": {
+      "start_level": { "name": "Start level" },
+      "stop_level": { "name": "Stop level" },
+      "max_run_time": { "name": "Maximum run time" },
+      "dry_run_interval": { "name": "Dry-run check interval" }
+    },
+    "sensor": {
+      "level": { "name": "Level" },
+      "water": { "name": "Water in tank" },
+      "pump_run_time": { "name": "Current run" },
+      "pump_time_today": { "name": "Pump time today" },
+      "pump_time_total": { "name": "Pump time total" },
+      "tank_used_today": { "name": "Tank used today" },
+      "water_used_today": { "name": "Water used today" },
+      "water_used_total": { "name": "Water used" },
+      "last_pump_event": {
+        "name": "Last pump change",
+        "state": {
+          "unknown": "Unknown",
+          "auto": "Auto",
+          "app": "App or Home Assistant",
+          "button": "Button on the unit",
+          "starter": "Starter",
+          "resume": "Resumed after power cut",
+          "tank_full": "Tank full",
+          "dry_run": "Dry run",
+          "max_run_time": "Maximum run time",
+          "quiet_hours": "Quiet hours",
+          "sensor_fault": "Level sensor fault",
+          "restart": "Restart",
+          "power_loss": "Power cut",
+          "starter_setting": "Starter setting changed",
+          "starter_full": "Starter tank full"
+        }
+      },
+      "last_pump_event_time": { "name": "Last pump change time" },
+      "distance": { "name": "Sensor distance" },
+      "status": { "name": "Status" }
+    },
+    "switch": {
+      "pump": { "name": "Pump" },
+      "auto": { "name": "Auto" },
+      "dry_run_protection": { "name": "Dry-run protection" },
+      "quiet_hours_mode": { "name": "Quiet hours mode" }
+    }
+  },
+  "exceptions": {
+    "not_connected": {
+      "message": "The unit at {host} isn't connected."
+    },
+    "start_not_below_stop": {
+      "message": "The start level must be below the stop level ({stop}%)."
+    },
+    "stop_not_above_start": {
+      "message": "The stop level must be above the start level ({start}%)."
+    }
+  }
+}

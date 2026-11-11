@@ -1,0 +1,13 @@
+{
+  "domain": "mdtronix_nivas",
+  "name": "MDtronix Smart Nivas",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/mdtronixlab/mdtronix-nivas",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/mdtronixlab/mdtronix-nivas/issues",
+  "requirements": [],
+  "version": "0.1.0",
+  "zeroconf": ["_mdtronix._tcp.local."]
+}
